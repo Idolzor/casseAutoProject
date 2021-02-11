@@ -1,4 +1,4 @@
-package model;
+package com.cda.tools;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

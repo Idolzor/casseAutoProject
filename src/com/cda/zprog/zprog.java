@@ -1,10 +1,12 @@
-package zprog;
+package com.cda.zprog;
 
 import java.util.TreeMap;
 
-import menu.action.Action;
-import menu.action.LesActions;
-import menu.ihm.IHM_INS;
+import com.cda.menu.action.Action;
+import com.cda.menu.action.LesActions;
+import com.cda.menu.ihm.IHM_INS;
+
+
 
 public class zprog {
 

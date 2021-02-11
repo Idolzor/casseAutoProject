@@ -1,4 +1,4 @@
-package model;
+package com.cda.model;
 
 public class Piece {
 	

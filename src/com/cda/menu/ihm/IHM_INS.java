@@ -1,4 +1,4 @@
-package menu.ihm;
+package com.cda.menu.ihm;
 
 import java.util.Scanner;
 

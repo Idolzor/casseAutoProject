@@ -1,4 +1,4 @@
-package menu.action;
+package com.cda.menu.action;
 
 
 final class Quitter extends Action {

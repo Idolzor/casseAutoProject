@@ -1,4 +1,4 @@
-package menu.action;
+package com.cda.menu.action;
 
 public interface LesActions {
 	public static final Quitter QUITTER = new Quitter();
