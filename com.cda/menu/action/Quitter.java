@@ -1,6 +1,5 @@
 package menu.action;
 
-import static menu.ihm.Ihm.IHM_INS;
 
 final class Quitter extends Action {
 
@@ -13,7 +12,7 @@ final class Quitter extends Action {
 
 	@Override
 	public boolean executer() {
-		IHM_INS.afficher("A bientot !");
+		System.out.println("A bientot !");
 		return Boolean.FALSE;
 	}
 
