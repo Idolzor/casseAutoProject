@@ -1,10 +1,10 @@
 package zprog;
-import static menu.ihm.Ihm.IHM_INS;
+
 import java.util.TreeMap;
 
 import menu.action.Action;
 import menu.action.LesActions;
-
+import menu.ihm.IHM_INS;
 
 public class zprog {
 
@@ -16,11 +16,10 @@ public class zprog {
 		boolean vContinuer;
 		int vActionSaisie;
 		do {
-			IHM_INS.afficher("\n*******************\nsaisissez une action");
 			for (Action action : actions.values()) {
-				IHM_INS.afficher("\t" + action.getId() + ")- " + action.getDescription());
+				System.out.println("\t" + action.getId() + ")- " + action.getDescription());
 			}
-			vActionSaisie = IHM_INS.lireEntier();
+			vActionSaisie = IHM_INS.lireChoix();
 			vContinuer = actions.getOrDefault(vActionSaisie, LesActions.ACTION_INTROUVABLE).executer();
 		} while (vContinuer);
 	}

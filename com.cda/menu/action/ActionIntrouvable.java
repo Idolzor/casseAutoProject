@@ -1,5 +1,4 @@
 package menu.action;
-import static menu.ihm.Ihm.IHM_INS;
 
 
 final class ActionIntrouvable extends Action {
@@ -13,7 +12,7 @@ final class ActionIntrouvable extends Action {
 
 	@Override
 	public boolean executer() {
-		IHM_INS.afficher("> votre saisie est incorrecte.");
+		System.out.println("> votre saisie est incorrecte.");
 		return Boolean.TRUE;
 	}
 }
