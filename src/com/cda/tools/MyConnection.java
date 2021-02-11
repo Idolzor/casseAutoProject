@@ -1,20 +1,17 @@
 package com.cda.tools;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.sql.DataSource;
 
 public class MyConnection {
-	String url = "jdbc:mysql://localhost:3306/casse_auto_projet?useSSL=false&serverTimezone=UTC";
-	String utilisateur = "root";
-	String motDePasse = "1598753";
 	private static Connection connexion = null;
 
 	private MyConnection() {
+		DataSource dataSource = MyDataSourceFactory.getMySQLDataSource();
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
-		} catch (Exception e) {
+			connexion = dataSource.getConnection();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -24,15 +21,5 @@ public class MyConnection {
 			new MyConnection();
 		}
 		return connexion;
-	}
-
-	public static void stop() {
-		if (connexion != null) {
-			try {
-				connexion.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
 	}
 }
