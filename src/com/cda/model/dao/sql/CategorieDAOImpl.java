@@ -1,4 +1,4 @@
-package com.cda.model;
+package com.cda.model.dao.sql;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.cda.model.Categorie;
+import com.cda.model.dao.CategorieDAO;
 import com.cda.tools.MyConnection;
 
 public class CategorieDAOImpl implements CategorieDAO {

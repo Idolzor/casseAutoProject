@@ -2,41 +2,39 @@ package com.cda.model;
 
 public class Marque {
 	
-	private int id_marque;
-	private String nom_marque;
+	private int id;
+	private String nom;
 	
-	public Marque(int pId_marque, String pNom_marque) {
-		this.id_marque = pId_marque;
-		this.nom_marque = pNom_marque;
-	}
-	
+		
 	public Marque() {
 		super();
 	}
 
 	@Override
 	public String toString() {
-		return "Marque [id_marque=" + id_marque + ", nom_marque=" + nom_marque + "]";
+		return "id=" + id + " | nom=" + nom ;
 	}
 
-	public int getId_marque() {
-		return id_marque;
+	public int getId() {
+		return id;
 	}
 
-	public int getId_marque(int i) {
-		return id_marque;
+	public int getId(int i) {
+		return id;
 	}
 
-	public void setId_marque(int id_marque) {
-		this.id_marque = id_marque;
+	public Marque setId(int id) {
+		this.id = id;
+		return this;
 	}
 
-	public String getNom_marque() {
-		return nom_marque;
+	public String getNom() {
+		return nom;
 	}
 
-	public void setNom_marque(String nom_marque) {
-		this.nom_marque = nom_marque;
+	public Marque setNom(String nom) {
+		this.nom = nom;
+		return this;
 	}
 	
 	

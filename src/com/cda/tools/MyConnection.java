@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MyConnection {
-	String url = "jdbc:mysql://localhost:3306/cda_sql?useSSL=false&serverTimezone=UTC";
-	String utilisateur = "user1";
-	String motDePasse = "user1pwd";
+	String url = "jdbc:mysql://localhost:3306/casse_auto_projet?useSSL=false&serverTimezone=UTC";
+	String utilisateur = "root";
+	String motDePasse = "1598753";
 	private static Connection connexion = null;
 
 	private MyConnection() {
