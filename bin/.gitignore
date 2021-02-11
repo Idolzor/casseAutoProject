@@ -1,4 +1,4 @@
-/tools/
-/menu/
-/zprog/
-/model/
+/bin/
+.classpath
+.project
+/.settings/
