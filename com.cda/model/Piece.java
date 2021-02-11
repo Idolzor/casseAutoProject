@@ -23,6 +23,10 @@ public class Piece {
 		return id_piece;
 	}
 
+	public int getId_piece(int i) {
+		return id_piece;
+	}
+
 	public void setId_piece(int id_piece) {
 		this.id_piece = id_piece;
 	}
