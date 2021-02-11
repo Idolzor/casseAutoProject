@@ -14,6 +14,7 @@ public class zprog {
 		TreeMap<Integer, Action> actions = new TreeMap<>();
 		ajouterAction(actions, LesActions.ACTION_INTROUVABLE);
 		ajouterAction(actions, LesActions.QUITTER);
+		ajouterAction(actions, LesActions.MARQUE_ACTION);
 
 		boolean vContinuer;
 		int vActionSaisie;

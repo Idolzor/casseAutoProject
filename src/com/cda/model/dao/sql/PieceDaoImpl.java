@@ -1,4 +1,4 @@
-package com.cda.model;
+package com.cda.model.dao.sql;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,24 +7,26 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.cda.model.Piece;
+import com.cda.model.dao.PieceDAO;
 import com.cda.tools.MyConnection;
 
-public class MarqueDAOImpl implements MarqueDAO {
+public class PieceDaoImpl implements PieceDAO {
 
 	@Override
-	public Marque save(Marque marque) {
+	public Piece save(Piece piece) {
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
-				PreparedStatement ps = c.prepareStatement("insert into Marque (id_piece,reference) values (?,?); ",
+				PreparedStatement ps = c.prepareStatement("insert into Piece (id_piece,reference) values (?,?); ",
 						PreparedStatement.RETURN_GENERATED_KEYS);
-				ps.setInt(1, marque.getId_marque());
-				ps.setString(2, marque.getNom_marque());
+				ps.setInt(1, piece.getId_piece());
+				ps.setString(2, piece.getReference());
 				ps.executeUpdate();
 				ResultSet resultat = ps.getGeneratedKeys();
 				if (resultat.next()) {
-					marque.getId_marque(resultat.getInt(1));
-					return marque;
+					piece.getId_piece(resultat.getInt(1));
+					return piece;
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -34,16 +36,16 @@ public class MarqueDAOImpl implements MarqueDAO {
 	}
 
 	@Override
-	public Marque findById(int id) {
-		Marque personne = null;
+	public Piece findById(int id) {
+		Piece personne = null;
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
-				PreparedStatement ps = c.prepareStatement("select * from Marque where id_piece = ?; ");
+				PreparedStatement ps = c.prepareStatement("select * from Piece where id_piece = ?; ");
 				ps.setInt(1, id);
 				ResultSet r = ps.executeQuery();
 				if (r.next()) {
-					personne = new Marque(r.getInt("id_marque"), r.getString("libelle"));
+					personne = new Piece(r.getInt("id_piece"), r.getString("reference"));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -57,7 +59,7 @@ public class MarqueDAOImpl implements MarqueDAO {
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
-				PreparedStatement ps = c.prepareStatement("DELETE FROM Marque WHERE NUM=?");
+				PreparedStatement ps = c.prepareStatement("DELETE FROM Piece WHERE NUM=?");
 				ps.setInt(1, id);
 				int nbDeleted = ps.executeUpdate();
 				return nbDeleted == 1;
@@ -69,15 +71,15 @@ public class MarqueDAOImpl implements MarqueDAO {
 	}
 
 	@Override
-	public boolean update(Marque piece) {
+	public boolean update(Piece piece) {
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
-				String request = "UPDATE Marque SET id_piece=?, reference=? WHERE Marque=?";
+				String request = "UPDATE Piece SET id_piece=?, reference=? WHERE Piece=?";
 
 				PreparedStatement statement = c.prepareStatement(request);
-				statement.setInt(1, piece.getId_marque());
-				statement.setString(2, piece.getNom_marque());
+				statement.setInt(1, piece.getId_piece());
+				statement.setString(2, piece.getReference());
 				int nbrUpdated = statement.executeUpdate();
 				return nbrUpdated == 1;
 			} catch (SQLException e) {
@@ -87,8 +89,8 @@ public class MarqueDAOImpl implements MarqueDAO {
 		return false;
 	}
 
-	public List<Marque> getAll() {
-		List<Marque> marque = new ArrayList<>();
+	public List<Piece> getAll() {
+		List<Piece> piece = new ArrayList<>();
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
@@ -96,13 +98,12 @@ public class MarqueDAOImpl implements MarqueDAO {
 				ResultSet r = statement.executeQuery();
 
 				while (r.next()) {
-					marque.add(new Marque(r.getInt("id_piece"), r.getString("reference")));
+					piece.add(new Piece(r.getInt("id_piece"), r.getString("reference")));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		return marque;
+		return piece;
 	}
-
 }
