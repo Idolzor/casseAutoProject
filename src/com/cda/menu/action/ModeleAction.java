@@ -75,7 +75,6 @@ public class ModeleAction extends Action {
 			int choixModifier = IHM_INS.lireChoix();
 			switch (choixModifier) {
 			case 1:
-
 				System.out.println("Choix du modèle à modifier : ");
 				String nomModeleActuel = IHM_INS.lireModele();
 				int anneeModele = IHM_INS.lireAnnee();
@@ -100,7 +99,6 @@ public class ModeleAction extends Action {
 				break;
 
 			case 2:
-
 				System.out.println("Choix du modèle à modifier : ");
 				String nomModeleActuelA = IHM_INS.lireModele();
 				int anneeModeleA = IHM_INS.lireAnnee();
@@ -120,10 +118,7 @@ public class ModeleAction extends Action {
 					}
 				} else {
 					System.out.println("Ce modèle n'existe pas");
-				}
-				
-				
-				
+				}			
 				break;
 
 			case 3:
@@ -134,9 +129,7 @@ public class ModeleAction extends Action {
 			}
 			break;
 
-		case 4:
-
-			
+		case 4:			
 			String nomSuppr = IHM_INS.lireModele();
 			Optional<Modele> modeleOptSuppr = this.modeleDAO.findByName(nomSuppr);
 			
@@ -153,8 +146,6 @@ public class ModeleAction extends Action {
 		default:
 			break;
 		}
-
 		return Boolean.TRUE;
-
 	}
 }
