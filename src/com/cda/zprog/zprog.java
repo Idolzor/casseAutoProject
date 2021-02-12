@@ -6,17 +6,17 @@ import com.cda.menu.action.Action;
 import com.cda.menu.action.LesActions;
 import com.cda.menu.ihm.IHM_INS;
 
-
-
 public class zprog {
 
 	public static void main(String[] args) {
 		TreeMap<Integer, Action> actions = new TreeMap<>();
 		ajouterAction(actions, LesActions.ACTION_INTROUVABLE);
 		ajouterAction(actions, LesActions.QUITTER);
+		ajouterAction(actions, LesActions.CATEGORIE_ACTION);
 		ajouterAction(actions, LesActions.MARQUE_ACTION);
 		ajouterAction(actions, LesActions.MODELE_ACTION);
 		ajouterAction(actions, LesActions.TYPE_PIECE_ACTION);
+		ajouterAction(actions, LesActions.VEHICULE_ACTION);
 
 		boolean vContinuer;
 		int vActionSaisie;

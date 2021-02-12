@@ -13,7 +13,7 @@ import com.cda.model.dao.sql.ModeleDAOImpl;
 
 public class ModeleAction extends Action {
 
-	private static final int ID = 2;
+	private static final int ID = 4;
 	private static final String DESC = "Actions sur les modeles";
 
 	private ModeleDAO modeleDAO;
