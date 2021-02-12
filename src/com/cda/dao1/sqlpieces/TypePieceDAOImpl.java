@@ -1,4 +1,4 @@
-package com.cda.model.dao.sql;
+package com.cda.dao1.sqlpieces;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.cda.model.TypePiece;
-import com.cda.model.dao.TypePieceDAO;
+import com.cda.dao.pieces.TypePieceDAO;
+import com.cda.model.pieces.TypePiece;
 import com.cda.tools.MyConnection;
 
 public class TypePieceDAOImpl implements TypePieceDAO {

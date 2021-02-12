@@ -2,13 +2,10 @@ package com.cda.menu.ihm;
 
 import java.util.Scanner;
 
-
-
 public class IHM_INS {
 
 	static Scanner scanner = new Scanner(System.in);
 
-	
 	public static int lireChoix() {
 
 		boolean nbTrouve = false;
@@ -22,15 +19,12 @@ public class IHM_INS {
 				nbTrouve = true;
 				return saisie;
 			} else {
-				System.out
-						.println("Saisie erronée");
+				System.out.println("Saisie erronée");
 			}
 		}
 		return 0;
 	}
 
-	
-	
 	public static String lireMarque() {
 		System.out.print("Saississez la marque du véhicule : ");
 		String saisie = scanner.next();
@@ -44,7 +38,7 @@ public class IHM_INS {
 
 		return upperCaseFirst(saisie);
 	}
-	
+
 	public static String lireTypePiece() {
 		System.out.println("Saisissez le type de piece :");
 		String saisie = scanner.next();
@@ -87,8 +81,7 @@ public class IHM_INS {
 		}
 		return 0;
 	}
-	
-	
+
 	public static int lireMois() {
 
 		boolean nbTrouve = false;
@@ -107,16 +100,14 @@ public class IHM_INS {
 		}
 		return 0;
 	}
-	
-		public static String lireCategorie() {
-			System.out.print("Saississez la categorie : ");
-			String saisie = scanner.next();
 
-			return saisie.toUpperCase();
+	public static String lireCategorie() {
+		System.out.print("Saississez la categorie : ");
+		String saisie = scanner.next();
+
+		return saisie.toUpperCase();
 	}
-	
-	
-	
+
 	public static String lireImmatriculation() {
 		System.out.print("Saississez l'immatriculation du véhicule : ");
 		String saisie = scanner.next();
@@ -131,19 +122,13 @@ public class IHM_INS {
 		return new String(arr);
 	}
 
-
-
 	public static String lireDesignationPiece() {
 		System.out.print("Designation de la piece : ");
 		String nom = scanner.next();
-	
-		
+		System.out.println("référence : ");
+		String reference = scanner.next();
 
-		return nom.toLowerCase();
+		return nom.toLowerCase() +"|ref:"+ reference.toLowerCase();
 	}
-
-
-
-
 
 }

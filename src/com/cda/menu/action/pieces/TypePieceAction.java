@@ -1,15 +1,16 @@
-package com.cda.menu.action;
+package com.cda.menu.action.pieces;
 
 import java.util.List;
 import java.util.Optional;
 
+import com.cda.dao.pieces.CategorieDAO;
+import com.cda.dao.pieces.TypePieceDAO;
+import com.cda.dao1.sqlpieces.CategorieDAOImpl;
+import com.cda.dao1.sqlpieces.TypePieceDAOImpl;
+import com.cda.menu.action.Action;
 import com.cda.menu.ihm.IHM_INS;
-import com.cda.model.Categorie;
-import com.cda.model.TypePiece;
-import com.cda.model.dao.CategorieDAO;
-import com.cda.model.dao.TypePieceDAO;
-import com.cda.model.dao.sql.CategorieDAOImpl;
-import com.cda.model.dao.sql.TypePieceDAOImpl;
+import com.cda.model.pieces.Categorie;
+import com.cda.model.pieces.TypePiece;
 
 public class TypePieceAction extends Action {
 
@@ -18,7 +19,7 @@ public class TypePieceAction extends Action {
 	private TypePieceDAO typePieceDAO;
 	private CategorieDAO categorieDAO;
 
-	TypePieceAction() {
+	public TypePieceAction() {
 		super(ID, DESC);
 		this.typePieceDAO = new TypePieceDAOImpl();
 		this.categorieDAO = new CategorieDAOImpl();

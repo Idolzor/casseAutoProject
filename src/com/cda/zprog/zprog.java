@@ -17,6 +17,7 @@ public class zprog {
 		ajouterAction(actions, LesActions.MODELE_ACTION);
 		ajouterAction(actions, LesActions.TYPE_PIECE_ACTION);
 		ajouterAction(actions, LesActions.VEHICULE_ACTION);
+		ajouterAction(actions, LesActions.ACTION_RELATION);
 
 		boolean vContinuer;
 		int vActionSaisie;

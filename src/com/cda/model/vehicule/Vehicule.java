@@ -1,4 +1,4 @@
-package com.cda.model;
+package com.cda.model.vehicule;
 
 public class Vehicule {
 	private String immatriculation;
