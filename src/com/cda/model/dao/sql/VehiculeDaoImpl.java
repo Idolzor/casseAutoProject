@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.cda.model.Marque;
 import com.cda.model.Vehicule;
 import com.cda.model.dao.VehiculeDAO;
 import com.cda.tools.MyConnection;

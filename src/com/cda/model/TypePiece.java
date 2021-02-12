@@ -1,54 +1,56 @@
 package com.cda.model;
 
 public class TypePiece {
-	
+
 	private int idTypePiece;
 	private String designation;
-	private int idCategorie;
-	
-	public TypePiece(String pDesignation, int pIdCategorie) {
-		this.designation = pDesignation;
-		this.idCategorie = pIdCategorie;
-	}
-	
+	private String idCategorie;
+	private int idCategorint;
+
 	public TypePiece() {
 		super();
 	}
 
 	@Override
 	public String toString() {
-		return "TypePiece [idTypePiece=" + idTypePiece + ", designation=" + designation + ", idCategorie=" + idCategorie
-				+ "]";
+		return "Categorie : " + idCategorie + " désignation : " + designation + " id : " + idTypePiece;
+
 	}
 
-	public int getIdTypePiece() {
+	public int getIdTypePiece(int i) {
 		return idTypePiece;
 	}
 
-	public void setIdTypePiece(int idTypePiece) {
+	public TypePiece setIdTypePiece(int idTypePiece) {
 		this.idTypePiece = idTypePiece;
+		return this;
 	}
 
 	public String getDesignation() {
 		return designation;
 	}
 
-	public void setDesignation(String designation) {
+	public TypePiece setDesignation(String designation) {
 		this.designation = designation;
+		return this;
 	}
 
-	public int getIdCategorie() {
-		return idCategorie;
-	}
-	
-	public int getIdCategorie(int i) {
+	public String getIdCategorie() {
 		return idCategorie;
 	}
 
-	public void setIdCategorie(int idCategorie) {
+	public String getIdCategorie(int i) {
+		return idCategorie;
+	}
+
+	public TypePiece setIdCategorie(String idCategorie) {
 		this.idCategorie = idCategorie;
+		return this;
 	}
-	
-	
+
+	public TypePiece setIdCategorint(int int1) {
+		this.idCategorint = int1;
+		return this;
+	}
 
 }
