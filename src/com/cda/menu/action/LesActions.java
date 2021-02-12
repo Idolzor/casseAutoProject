@@ -8,5 +8,5 @@ public interface LesActions {
 	public static final VehiculeAction VEHICULE_ACTION = new VehiculeAction();
 	public static final CategorieAction CATEGORIE_ACTION = new CategorieAction();
 	public static final ActionIntrouvable ACTION_INTROUVABLE = new ActionIntrouvable();
-
+	public static final ExportExcelAction EXPORT_EXCEL_ACTION = new ExportExcelAction();
 }
