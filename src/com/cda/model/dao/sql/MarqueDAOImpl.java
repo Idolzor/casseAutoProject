@@ -85,7 +85,6 @@ public class MarqueDAOImpl implements MarqueDAO {
 
 				while (r.next()) {
 					marque.add(new Marque().setId(r.getInt("idMarque")).setNom(r.getString("nomMarque")));
-
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

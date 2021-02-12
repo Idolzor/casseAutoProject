@@ -6,22 +6,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.cda.model.Categorie;
+import com.cda.model.Marque;
 import com.cda.model.dao.CategorieDAO;
 import com.cda.tools.MyConnection;
 
 public class CategorieDAOImpl implements CategorieDAO {
-	
+
 	@Override
 	public Categorie save(Categorie categorie) {
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
-				PreparedStatement ps = c.prepareStatement("insert into Categorie (id_piece,reference) values (?,?); ",
+				PreparedStatement ps = c.prepareStatement("insert into Categorie (libelle) values (?); ",
 						PreparedStatement.RETURN_GENERATED_KEYS);
-				ps.setInt(1, categorie.getId_categorie());
-				ps.setString(2, categorie.getLibelle());
+
+				ps.setString(1, categorie.getLibelle());
 				ps.executeUpdate();
 				ResultSet resultat = ps.getGeneratedKeys();
 				if (resultat.next()) {
@@ -94,17 +96,75 @@ public class CategorieDAOImpl implements CategorieDAO {
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
-				PreparedStatement statement = c.prepareStatement("SELECT * FROM Categorie");
+				PreparedStatement statement = c.prepareStatement("SELECT * FROM categorie");
 				ResultSet r = statement.executeQuery();
-
 				while (r.next()) {
-					categorie.add(new Categorie(r.getInt("id_categorie"), r.getString("libelle")));
+					categorie.add(new Categorie(r.getInt("idCategorie"), r.getString("libelle")));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 		return categorie;
+	}
+
+	@Override
+	public Optional<Categorie> findByName(String nom) {
+		Connection c = MyConnection.getConnection();
+		Categorie res = null;
+		if (c != null) {
+			try {
+				PreparedStatement ps = c.prepareStatement("select * from categorie where upper(libelle) = upper(?)");
+				ps.setString(1, nom);
+				ResultSet r = ps.executeQuery();
+				if (r.next()) {
+					res = new Categorie().setLibelle(r.getString("libelle"));
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return Optional.ofNullable(res);
+	}
+
+	@Override
+	public boolean removeByName(String nomSuppr) {
+		Connection c = MyConnection.getConnection();
+		if (c != null) {
+			try {
+				PreparedStatement ps = c.prepareStatement("DELETE FROM categorie WHERE libelle=?");
+				ps.setString(1, nomSuppr);
+				int nbDeleted = ps.executeUpdate();
+				return nbDeleted == 1;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public Categorie modify(Categorie categorie, String ancienNom) {
+		Connection c = MyConnection.getConnection();
+		if (c != null) {
+			try {
+				PreparedStatement ps = c.prepareStatement("update categorie set libelle = (?) where libelle = (?);",
+						PreparedStatement.RETURN_GENERATED_KEYS);
+
+				ps.setString(1, categorie.getLibelle());
+				ps.setString(2, ancienNom);
+				ps.executeUpdate();
+				ResultSet resultat = ps.getGeneratedKeys();
+				if (resultat.next()) {
+					categorie.getId_categorie(resultat.getInt(1));
+					return categorie;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+
 	}
 
 }

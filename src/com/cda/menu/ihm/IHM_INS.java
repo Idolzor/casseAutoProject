@@ -108,7 +108,12 @@ public class IHM_INS {
 		return 0;
 	}
 	
-	
+		public static String lireCategorie() {
+			System.out.print("Saississez la categorie : ");
+			String saisie = scanner.next();
+
+			return saisie.toUpperCase();
+	}
 	
 	
 	
@@ -116,7 +121,7 @@ public class IHM_INS {
 		System.out.print("Saississez l'immatriculation du véhicule : ");
 		String saisie = scanner.next();
 
-		return upperCaseFirst(saisie);
+		return saisie.toLowerCase();
 	}
 
 	public static String upperCaseFirst(String val) {
@@ -125,5 +130,9 @@ public class IHM_INS {
 		arr[0] = Character.toUpperCase(arr[0]);
 		return new String(arr);
 	}
+
+
+
+
 
 }
