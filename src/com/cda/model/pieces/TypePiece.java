@@ -1,4 +1,4 @@
-package com.cda.model;
+package com.cda.model.pieces;
 
 public class TypePiece {
 

@@ -1,13 +1,14 @@
-package com.cda.menu.action;
+package com.cda.menu.action.pieces;
 
 import java.util.List;
 import java.util.Optional;
 
+import com.cda.dao.pieces.CategorieDAO;
+import com.cda.dao1.sqlpieces.CategorieDAOImpl;
+import com.cda.menu.action.Action;
 import com.cda.menu.ihm.IHM_INS;
-import com.cda.model.Categorie;
-import com.cda.model.Marque;
-import com.cda.model.dao.CategorieDAO;
-import com.cda.model.dao.sql.CategorieDAOImpl;
+import com.cda.model.pieces.Categorie;
+import com.cda.model.vehicule.Marque;
 
 public class CategorieAction extends Action {
 
@@ -15,7 +16,7 @@ public class CategorieAction extends Action {
 	private static final String DESC = "Actions sur les categories";
 	private CategorieDAO categorieDao;
 
-	protected CategorieAction() {
+	public CategorieAction() {
 		super(ID, DESC);
 		this.categorieDao = new CategorieDAOImpl();
 	}

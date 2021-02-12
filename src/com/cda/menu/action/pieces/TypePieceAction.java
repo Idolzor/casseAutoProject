@@ -1,32 +1,25 @@
-package com.cda.menu.action;
+package com.cda.menu.action.pieces;
 
 import java.util.List;
 import java.util.Optional;
 
+import com.cda.dao.pieces.CategorieDAO;
+import com.cda.dao.pieces.TypePieceDAO;
+import com.cda.dao1.sqlpieces.CategorieDAOImpl;
+import com.cda.dao1.sqlpieces.TypePieceDAOImpl;
+import com.cda.menu.action.Action;
 import com.cda.menu.ihm.IHM_INS;
-import com.cda.model.Categorie;
-import com.cda.model.TypePiece;
-<<<<<<< HEAD
-import com.cda.model.dao.CategorieDAO;
-import com.cda.model.dao.TypePieceDAO;
-import com.cda.model.dao.sql.CategorieDAOImpl;
-import com.cda.model.dao.sql.TypePieceDAOImpl;
-=======
-import com.cda.model.dao.TypePieceDAO;
->>>>>>> 369da76 (création action export excel)
+import com.cda.model.pieces.Categorie;
+import com.cda.model.pieces.TypePiece;
 
 public class TypePieceAction extends Action {
 
 	private static final int ID = 2;
 	private static final String DESC = "Actions sur les type de piece";
-<<<<<<< HEAD
 	private TypePieceDAO typePieceDAO;
 	private CategorieDAO categorieDAO;
-=======
-	private TypePieceDAO typepieceDAO;
->>>>>>> 369da76 (création action export excel)
 
-	TypePieceAction() {
+	public TypePieceAction() {
 		super(ID, DESC);
 		this.typePieceDAO = new TypePieceDAOImpl();
 		this.categorieDAO = new CategorieDAOImpl();
@@ -35,7 +28,6 @@ public class TypePieceAction extends Action {
 	@Override
 	public boolean executer() {
 
-<<<<<<< HEAD
 		System.out.println(" 1 : Ajouter un type de piece" + "\n 2 : Voir les types de piece"
 				+ "\n 3 : Supprimer un type de piece" + "\n 4 : Retour");
 		int choix = IHM_INS.lireChoix();
@@ -63,17 +55,6 @@ public class TypePieceAction extends Action {
 			break;
 		case 2:
 			List<TypePiece> typepiece = this.typePieceDAO.getAll();
-=======
-		System.out.println(" 1 : Ajouter une type de piece" + "\n 2 : Voir les types de piece"
-				+ "\n 3 : Modifier une type de piece" + "\n 4 : Supprimer une type de piece");
-		int choix = IHM_INS.lireChoix();
-		switch (choix) {
-		case 1:
-
-			break;
-		case 2:
-			List<TypePiece> typepiece = this.typepieceDAO.getAll();
->>>>>>> 369da76 (création action export excel)
 			if (typepiece.isEmpty()) {
 				System.out.println("  aucun type de piece !");
 			} else {
@@ -81,7 +62,6 @@ public class TypePieceAction extends Action {
 					System.out.println(e);
 				});
 			}
-<<<<<<< HEAD
 			break;
 
 		case 3:
@@ -101,11 +81,6 @@ public class TypePieceAction extends Action {
 		default:
 			break;
 		}
-=======
-			break;
-		}
-
->>>>>>> 369da76 (création action export excel)
 		return Boolean.TRUE;
 	}
 

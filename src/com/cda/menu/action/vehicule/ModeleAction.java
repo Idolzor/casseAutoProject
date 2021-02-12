@@ -1,25 +1,26 @@
-package com.cda.menu.action;
+package com.cda.menu.action.vehicule;
 
 import java.util.List;
 import java.util.Optional;
 
+import com.cda.dao.vehicule.MarqueDAO;
+import com.cda.dao.vehicule.ModeleDAO;
+import com.cda.dao1.sqlvehicule.MarqueDAOImpl;
+import com.cda.dao1.sqlvehicule.ModeleDAOImpl;
+import com.cda.menu.action.Action;
 import com.cda.menu.ihm.IHM_INS;
-import com.cda.model.Marque;
-import com.cda.model.Modele;
-import com.cda.model.dao.MarqueDAO;
-import com.cda.model.dao.ModeleDAO;
-import com.cda.model.dao.sql.MarqueDAOImpl;
-import com.cda.model.dao.sql.ModeleDAOImpl;
+import com.cda.model.vehicule.Marque;
+import com.cda.model.vehicule.Modele;
 
 public class ModeleAction extends Action {
 
-	private static final int ID = 4;
+	private static final int ID = 5;
 	private static final String DESC = "Actions sur les modeles";
 
 	private ModeleDAO modeleDAO;
 	private MarqueDAO marqueDAO;
 
-	ModeleAction() {
+	public ModeleAction() {
 		super(ID, DESC);
 		this.modeleDAO = new ModeleDAOImpl();
 		this.marqueDAO = new MarqueDAOImpl();

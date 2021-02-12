@@ -1,10 +1,10 @@
-package com.cda.model.dao;
+package com.cda.dao.pieces;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.cda.model.Categorie;
-import com.cda.model.Marque;
+import com.cda.model.pieces.Categorie;
+import com.cda.model.vehicule.Marque;
 
 public interface CategorieDAO {
 	

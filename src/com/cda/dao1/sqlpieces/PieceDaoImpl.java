@@ -1,4 +1,4 @@
-package com.cda.model.dao.sql;
+package com.cda.dao1.sqlpieces;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.cda.model.Piece;
-import com.cda.model.dao.PieceDAO;
+import com.cda.dao.pieces.PieceDAO;
+import com.cda.model.pieces.Piece;
 import com.cda.tools.MyConnection;
 
 public class PieceDaoImpl implements PieceDAO {
