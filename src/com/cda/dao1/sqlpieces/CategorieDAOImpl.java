@@ -1,4 +1,4 @@
-package com.cda.model.dao.sql;
+package com.cda.dao1.sqlpieces;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.cda.model.Categorie;
-import com.cda.model.Marque;
-import com.cda.model.dao.CategorieDAO;
+import com.cda.dao.pieces.CategorieDAO;
+import com.cda.model.pieces.Categorie;
+import com.cda.model.vehicule.Marque;
 import com.cda.tools.MyConnection;
 
 public class CategorieDAOImpl implements CategorieDAO {

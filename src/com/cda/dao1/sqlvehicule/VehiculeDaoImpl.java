@@ -1,4 +1,4 @@
-package com.cda.model.dao.sql;
+package com.cda.dao1.sqlvehicule;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.cda.model.Vehicule;
-import com.cda.model.dao.VehiculeDAO;
+import com.cda.dao.vehicule.VehiculeDAO;
+import com.cda.model.vehicule.Vehicule;
 import com.cda.tools.MyConnection;
 
 public class VehiculeDaoImpl implements VehiculeDAO {

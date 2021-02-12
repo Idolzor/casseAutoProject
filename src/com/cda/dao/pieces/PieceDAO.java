@@ -1,8 +1,8 @@
-package com.cda.model.dao;
+package com.cda.dao.pieces;
 
 import java.util.List;
 
-import com.cda.model.Piece;
+import com.cda.model.pieces.Piece;
 
 public interface PieceDAO {
 	

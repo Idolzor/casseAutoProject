@@ -1,21 +1,22 @@
-package com.cda.menu.action;
+package com.cda.menu.action.vehicule;
 
 import java.util.List;
 import java.util.Optional;
 
+import com.cda.dao.vehicule.MarqueDAO;
+import com.cda.dao1.sqlvehicule.MarqueDAOImpl;
+import com.cda.menu.action.Action;
 import com.cda.menu.ihm.IHM_INS;
-import com.cda.model.Marque;
-import com.cda.model.dao.MarqueDAO;
-import com.cda.model.dao.sql.MarqueDAOImpl;
+import com.cda.model.vehicule.Marque;
 
 public class MarqueAction extends Action {
 
-	private static final int ID = 3;
+	private static final int ID = 4;
 	private static final String DESC = "Actions sur les marques";
 
 	private MarqueDAO marqueDAO;
 	
-	MarqueAction() {
+	public MarqueAction() {
 		super(ID, DESC);
 		this.marqueDAO = new MarqueDAOImpl();
 	}
