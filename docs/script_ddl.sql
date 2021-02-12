@@ -22,7 +22,7 @@ CREATE TABLE TypePiece(
 CREATE TABLE Modele(
    idModele INT NOT NULL AUTO_INCREMENT,
    nomModele VARCHAR(20) NOT NULL,
-   annneeModele DATE NOT NULL,
+   anneeModele INT NOT NULL,
    idMarque INT NOT NULL,
    PRIMARY KEY(idModele),
    FOREIGN KEY(idMarque) REFERENCES Marque(idMarque)
@@ -37,7 +37,7 @@ CREATE TABLE Vehicule(
 CREATE TABLE Piece(
    idPiece INT NOT NULL AUTO_INCREMENT,
    dateRecuperation DATE NOT NULL,
-   prixVente FLOAT(10,2),
+   prixVente FLOAT(10,2) NOT NULL,
    dateVente DATE,
    immatriculation VARCHAR(15) NOT NULL,
    idTypePiece INT NOT NULL,
