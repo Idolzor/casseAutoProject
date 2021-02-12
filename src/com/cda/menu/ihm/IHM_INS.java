@@ -44,11 +44,16 @@ public class IHM_INS {
 
 		return upperCaseFirst(saisie);
 	}
+	
+	public static String lireTypePiece() {
+		System.out.println("Saisissez le type de piece :");
+		String saisie = scanner.next();
+		return saisie.toUpperCase();
+	}
 
 	public static int lireAnnee() {
 
 		boolean nbTrouve = false;
-
 		while (nbTrouve == false) {
 			System.out.print("Année : ");
 			int saisie = scanner.nextInt();

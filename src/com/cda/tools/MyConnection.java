@@ -5,6 +5,10 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 public class MyConnection {
+
+	String url = "jdbc:mysql://localhost:3306/casse_auto_projet?useSSL=false&serverTimezone=UTC";
+	String utilisateur = "root";
+	String motDePasse = "";
 	private static Connection connexion = null;
 
 	private MyConnection() {
