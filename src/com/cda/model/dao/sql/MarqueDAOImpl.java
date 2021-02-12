@@ -19,7 +19,7 @@ public class MarqueDAOImpl implements MarqueDAO {
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
-				PreparedStatement ps = c.prepareStatement("insert into marque (nomMarque) values (?); ",
+				PreparedStatement ps = c.prepareStatement("insert into marque (nomMarque) values (?);",
 						PreparedStatement.RETURN_GENERATED_KEYS);
 
 				ps.setString(1, marque.getNom());
@@ -41,7 +41,7 @@ public class MarqueDAOImpl implements MarqueDAO {
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
-				PreparedStatement ps = c.prepareStatement("update marque set nomMarque = (?) where nomMarque = (?); ",
+				PreparedStatement ps = c.prepareStatement("update marque set nomMarque = (?) where nomMarque = (?);",
 						PreparedStatement.RETURN_GENERATED_KEYS);
 
 				ps.setString(1, marque.getNom());

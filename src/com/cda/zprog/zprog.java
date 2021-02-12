@@ -15,6 +15,7 @@ public class zprog {
 		ajouterAction(actions, LesActions.ACTION_INTROUVABLE);
 		ajouterAction(actions, LesActions.QUITTER);
 		ajouterAction(actions, LesActions.MARQUE_ACTION);
+		ajouterAction(actions, LesActions.MODELE_ACTION);
 
 		boolean vContinuer;
 		int vActionSaisie;

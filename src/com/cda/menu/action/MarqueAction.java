@@ -27,7 +27,8 @@ public class MarqueAction extends Action {
 		System.out.println(" 1 : Ajouter une marque"
 				+ "\n 2 : Voir les marques"
 				+ "\n 3 : Modifier une marque"
-				+ "\n 4 : Supprimer une marque");
+				+ "\n 4 : Supprimer une marque"
+				+ "\n 5 : Retour");
 		int choix = IHM_INS.lireChoix();
 		
 		
@@ -87,6 +88,13 @@ public class MarqueAction extends Action {
 				System.out.println("Cette marque n'existe pas dans la BDD");
 			}			
 			break;
+			
+			
+			
+		case 5:
+			break;
+			
+			
 		default:
 			break;
 		}
