@@ -12,7 +12,7 @@ final class ActionIntrouvable extends Action {
 
 	@Override
 	public boolean executer() {
-		System.out.println("> votre saisie est incorrecte.");
+		System.out.println("votre saisie est incorrecte.");
 		return Boolean.TRUE;
 	}
 }
