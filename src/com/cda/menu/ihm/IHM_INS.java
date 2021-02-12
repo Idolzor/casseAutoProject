@@ -133,6 +133,17 @@ public class IHM_INS {
 
 
 
+	public static String lireDesignationPiece() {
+		System.out.print("Designation de la piece : ");
+		String nom = scanner.next();
+	
+		
+
+		return nom.toLowerCase();
+	}
+
+
+
 
 
 }

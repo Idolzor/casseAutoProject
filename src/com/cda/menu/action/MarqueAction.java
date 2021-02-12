@@ -10,7 +10,7 @@ import com.cda.model.dao.sql.MarqueDAOImpl;
 
 public class MarqueAction extends Action {
 
-	private static final int ID = 2;
+	private static final int ID = 3;
 	private static final String DESC = "Actions sur les marques";
 
 	private MarqueDAO marqueDAO;
