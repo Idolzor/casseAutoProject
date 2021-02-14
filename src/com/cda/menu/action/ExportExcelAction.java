@@ -1,17 +1,34 @@
 package com.cda.menu.action;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.FileNotFoundException;
+import com.cda.model.Book;
+import com.cda.tools.MyConnection;
+
+import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFFont;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+
 public class ExportExcelAction extends Action {
+
+	private static HSSFCellStyle createStyleForTitle(HSSFWorkbook workbook) {
+		HSSFFont font = workbook.createFont();
+		font.setBold(true);
+		HSSFCellStyle style = workbook.createCellStyle();
+		style.setFont(font);
+		return style;
+	}
 
 	private static final int ID = 10;
 	private static final String DESC = "Export excel";
-	 private static final String FILE_NAME = "/tmp/MyFirstExcel.xlsx";
 
 	ExportExcelAction() {
 		super(ID, DESC);
@@ -19,44 +36,71 @@ public class ExportExcelAction extends Action {
 
 	@Override
 	public boolean executer() {
-		XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet("Datatypes in Java");
-        Object[][] datatypes = {
-                {"Datatype", "Type", "Size(in bytes)"},
-                {"int", "Primitive", 2},
-                {"float", "Primitive", 4},
-                {"double", "Primitive", 8},
-                {"char", "Primitive", 1},
-                {"String", "Non-Primitive", "No fixed size"}
-        };
+		ArrayList<Book> list = new ArrayList<>();
+		Connection c = MyConnection.getConnection();
+		try {
+			PreparedStatement statement = c.prepareStatement(
+					"select count(piece.dateVente) as piece, modele.nomModele as Nom, modele.annneeModele as annee\r\n"
+							+ "from vehicule\r\n" + "inner join piece on\r\n"
+							+ "vehicule.immatriculation = piece.immatriculation\r\n" + "inner join modele on\r\n"
+							+ "vehicule.idModele = modele.idModele\r\n" + "group by nomModele\r\n"
+							+ "order by annee desc\r\n" + "limit 3;");
+			ResultSet r = statement.executeQuery();
+			int i = 0;
+			while (r.next()) {
+				list.add(new Book(r.getString("piece"), r.getString("Nom"), r.getString("annee")));
+			}
+			HSSFWorkbook workbook = new HSSFWorkbook();
+			HSSFSheet sheet = workbook.createSheet("Tableau ");
 
-        int rowNum = 0;
-        System.out.println("Creating excel");
+			int rownum = 0;
+			Cell cell;
+			Row row;
+			//
 
-        for (Object[] datatype : datatypes) {
-            Row row = sheet.createRow(rowNum++);
-            int colNum = 0;
-            for (Object field : datatype) {
-                Cell cell = row.createCell(colNum++);
-                if (field instanceof String) {
-                    cell.setCellValue((String) field);
-                } else if (field instanceof Integer) {
-                    cell.setCellValue((Integer) field);
-                }
-            }
-        }
+			HSSFCellStyle style = createStyleForTitle(workbook);
 
-        try {
-            FileOutputStream outputStream = new FileOutputStream(FILE_NAME);
-            workbook.write(outputStream);
-            workbook.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+			row = sheet.createRow(rownum);
 
-        System.out.println("Done");
+			// Piece
+			cell = row.createCell(0, CellType.STRING);
+			cell.setCellValue("Piece");
+			cell.setCellStyle(style);
+			// Nom
+			cell = row.createCell(1, CellType.STRING);
+			cell.setCellValue("Nom");
+			cell.setCellStyle(style);
+			// Salaire
+			cell = row.createCell(2, CellType.STRING);
+			cell.setCellValue("Annee");
+			cell.setCellStyle(style);
+			
+			for (Book car : list) {
+	            rownum++;
+	            row = sheet.createRow(rownum);
+	 
+	            // EmpNo (A)
+	            cell = row.createCell(0, CellType.STRING);
+	            cell.setCellValue(car.getPiece());
+	            // EmpName (B)
+	            cell = row.createCell(1, CellType.STRING);
+	            cell.setCellValue(car.getNom());
+	            // Salary (C)
+	            cell = row.createCell(2, CellType.STRING);
+	            cell.setCellValue(car.getAnnee());
+	        }		
+			
+	        File file = new File("C:/Outils/JavaBooks.xls");
+	        file.getParentFile().mkdirs(); 
+	        FileOutputStream outFile = new FileOutputStream(file);
+	        workbook.write(outFile);
+	        System.out.println("Created file: " + file.getAbsolutePath());
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		System.out.println("Fichier créer");
 		return Boolean.TRUE;
-    }
+	}
 }

@@ -9,13 +9,27 @@ import com.cda.dao1.sqlpieces.CategorieDAOImpl;
 import com.cda.dao1.sqlpieces.TypePieceDAOImpl;
 import com.cda.menu.action.Action;
 import com.cda.menu.ihm.IHM_INS;
+<<<<<<< HEAD:src/com/cda/menu/action/pieces/TypePieceAction.java
 import com.cda.model.pieces.Categorie;
 import com.cda.model.pieces.TypePiece;
+=======
+import com.cda.model.Categorie;
+import com.cda.model.TypePiece;
+
+import com.cda.model.dao.CategorieDAO;
+import com.cda.model.dao.TypePieceDAO;
+import com.cda.model.dao.sql.CategorieDAOImpl;
+import com.cda.model.dao.sql.TypePieceDAOImpl;
+>>>>>>> 15eeb42 (création fichier excel htlml):src/com/cda/menu/action/TypePieceAction.java
 
 public class TypePieceAction extends Action {
 
 	private static final int ID = 2;
 	private static final String DESC = "Actions sur les type de piece";
+<<<<<<< HEAD:src/com/cda/menu/action/pieces/TypePieceAction.java
+=======
+
+>>>>>>> 15eeb42 (création fichier excel htlml):src/com/cda/menu/action/TypePieceAction.java
 	private TypePieceDAO typePieceDAO;
 	private CategorieDAO categorieDAO;
 
@@ -63,7 +77,6 @@ public class TypePieceAction extends Action {
 				});
 			}
 			break;
-
 		case 3:
 			String nomSuppr = IHM_INS.lireDesignationPiece();
 			Optional<TypePiece> typePieceOptSuppr = this.typePieceDAO.findByName(nomSuppr);
@@ -81,6 +94,10 @@ public class TypePieceAction extends Action {
 		default:
 			break;
 		}
+<<<<<<< HEAD:src/com/cda/menu/action/pieces/TypePieceAction.java
+=======
+
+>>>>>>> 15eeb42 (création fichier excel htlml):src/com/cda/menu/action/TypePieceAction.java
 		return Boolean.TRUE;
 	}
 
