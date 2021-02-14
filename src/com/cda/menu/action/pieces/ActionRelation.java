@@ -20,7 +20,7 @@ import com.cda.model.vehicule.Modele;
 
 public class ActionRelation extends Action {
 
-	private static final int ID = 3;
+	private static final int ID = 4;
 	private static final String DESC = "Actions sur les relations pieces/vehicule";
 
 	private RelationDAO relationDAO;

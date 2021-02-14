@@ -1,44 +1,91 @@
 package com.cda.model.pieces;
 
+import java.util.Date;
+
 public class Piece {
-	
-	private int id_piece;
-	private String reference;
-	
-	public Piece(int PId_Piece, String pReference) {
-		this.id_piece = PId_Piece;
-		this.reference = pReference;
-	}
-	
+
+	private int idPiece;
+	private String dateRecup;
+	private Date dateVente;
+	private float prixVente;
+	private String immatriculation;
+	private String idTypePiece;
+	private String categorie;
+
 	public Piece() {
 		super();
 	}
 
 	@Override
 	public String toString() {
-		return "Piece [id_piece=" + id_piece + ", reference=" + reference + "]";
+		return "Piece [id_piece=" + idPiece + ", reference=" + immatriculation + "]";
 	}
 
-	public int getId_piece() {
-		return id_piece;
+	public int getIdPiece() {
+		return idPiece;
 	}
 
-	public int getId_piece(int i) {
-		return id_piece;
+	public String getDateRecup() {
+		return dateRecup;
 	}
 
-	public void setId_piece(int id_piece) {
-		this.id_piece = id_piece;
+	public Date getDateVente() {
+		return dateVente;
 	}
 
-	public String getReference() {
-		return reference;
+	public float getPrixVente() {
+		return prixVente;
 	}
 
-	public void setReference(String reference) {
-		this.reference = reference;
+	public String getImmatriculation() {
+		return immatriculation;
 	}
-	
-	
+
+	public String getIdTypePiece() {
+		return idTypePiece;
+	}
+
+	public Piece setIdPiece(int idPiece) {
+		this.idPiece = idPiece;
+		return this;
+	}
+
+	public Piece setDateRecup(String dateRecup) {
+		this.dateRecup = dateRecup;
+		return this;
+	}
+
+	public Piece setDateVente(Date dateVente) {
+		this.dateVente = dateVente;
+		return this;
+	}
+
+	public Piece setPrixVente(float prixVente) {
+		this.prixVente = prixVente;
+		return this;
+	}
+
+	public Piece setImmatriculation(String immatriculation) {
+		this.immatriculation = immatriculation;
+		return this;
+	}
+
+	public Piece setIdTypePiece(String typepiece) {
+		this.idTypePiece = typepiece;
+		return this;
+	}
+
+	public Piece setCategorie(String categorie) {
+		this.categorie = categorie;
+		return this;
+	}
+
+	public String getCategorie() {
+		return categorie;
+	}
+
+	public int getIdPiece(int int1) {
+		return int1;
+	}
 
 }

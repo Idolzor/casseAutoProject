@@ -76,7 +76,7 @@ public class IHM_INS {
 				return saisie;
 			} else {
 				System.out
-						.println(saisie + " l'année renseignée n'est pas correcte, merci de recommencer votre saisie");
+						.println(saisie + " le jour renseignée n'est pas correcte, merci de recommencer votre saisie");
 			}
 		}
 		return 0;
@@ -95,7 +95,7 @@ public class IHM_INS {
 				return saisie;
 			} else {
 				System.out
-						.println(saisie + " l'année renseignée n'est pas correcte, merci de recommencer votre saisie");
+						.println(saisie + " le mois renseignée n'est pas correcte, merci de recommencer votre saisie");
 			}
 		}
 		return 0;
@@ -128,7 +128,15 @@ public class IHM_INS {
 		System.out.println("référence : ");
 		String reference = scanner.next();
 
-		return nom.toLowerCase() +"|ref:"+ reference.toLowerCase();
+		return nom.toLowerCase() + "|ref:" + reference.toLowerCase();
+	}
+
+	public static Float lirePrix() {
+
+		System.out.println("Saississez le prix de vente : ");
+		Float PDV = scanner.nextFloat();
+
+		return PDV;
 	}
 
 }

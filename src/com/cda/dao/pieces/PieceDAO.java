@@ -1,15 +1,16 @@
 package com.cda.dao.pieces;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.cda.model.pieces.Piece;
+import com.cda.model.pieces.TypePiece;
 
 public interface PieceDAO {
 	
 	Piece save(Piece piece);
-	boolean removeById(int id);
 	boolean update(Piece piece);
-	Piece findById(int id);
+	Optional<Piece> findByName(String immat);
 	List<Piece> getAll();
 
 }

@@ -49,7 +49,7 @@ public class Relation {
 	public int getIdTypePiece(int int1) {
 		return int1;
 	}
-	
+
 	public Relation setIdTypePiece(int idTypePiece) {
 		this.idTypePiece = idTypePiece;
 		return this;
@@ -57,7 +57,7 @@ public class Relation {
 
 	@Override
 	public String toString() {
-		return  "idPiece : " + idTypePiece + " Ref : "  + designation +" Modele :"+ nomModele+ anneeModele;
+		return "idPiece : " + idTypePiece + " Ref : " + designation + " Modele :" + nomModele + " " + anneeModele;
 	}
 
 }
