@@ -48,10 +48,14 @@ public class PieceDaoImpl implements PieceDAO {
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
-				String request = "UPDATE Piece SET id_piece=?, reference=? WHERE Piece=?";
+				String request = "update piece set dateVente =? where idTypePiece = (select distinct idTypePiece from typepiece where designation = ?)  order by dateVente limit 1;";
 
 				PreparedStatement statement = c.prepareStatement(request);
 
+				statement.setString(1, piece.getDateVente());
+				statement.setString(2,piece.getIdTypePiece());
+				
+				
 				int nbrUpdated = statement.executeUpdate();
 				return nbrUpdated == 1;
 			} catch (SQLException e) {

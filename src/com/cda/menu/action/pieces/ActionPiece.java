@@ -39,7 +39,7 @@ public class ActionPiece extends Action {
 	@Override
 	public boolean executer() {
 		System.out.println(" 1 : Recuperer une piece d'un véhicule"
-				+ "\n 2 : voir les pieces compatibles avec un modele" + "\n 3 : vendre une piece" + "\n 4 : Retour");
+				+ "\n 2 : vendre une piece" + "\n 3 : Retour");
 		int choix = IHM_INS.lireChoix();
 		switch (choix) {
 		case 1:
@@ -79,12 +79,21 @@ public class ActionPiece extends Action {
 			break;
 		case 2:
 			
+					String reference1 = IHM_INS.lireDesignationPiece();
+					Optional<TypePiece>typePieceOpt1= this.typePieceDAO.findByName(reference1);
+					
+					if (typePieceOpt1.isPresent()) {
+						System.out.println("Saisir la date de vente : ");
+					int jour=IHM_INS.lireJour();
+					int mois=IHM_INS.lireMois();
+					int annee=IHM_INS.lireAnnee();
+					
+					String dateVente = annee + "-" + mois + "-" + jour;
+					this.pieceDAO.update(new Piece().setDateVente(dateVente).setIdTypePiece(reference1));
+					}else {
+						System.out.println("Cette piece n'existe pas.");
+					}
 			
-			
-			
-			
-			
-
 			break;
 
 		case 3:
