@@ -9,8 +9,16 @@ import com.cda.dao1.sqlpieces.CategorieDAOImpl;
 import com.cda.dao1.sqlpieces.TypePieceDAOImpl;
 import com.cda.menu.action.Action;
 import com.cda.menu.ihm.IHM_INS;
+
 import com.cda.model.pieces.Categorie;
 import com.cda.model.pieces.TypePiece;
+import com.cda.model.Categorie;
+import com.cda.model.TypePiece;
+
+import com.cda.model.dao.CategorieDAO;
+import com.cda.model.dao.TypePieceDAO;
+import com.cda.model.dao.sql.CategorieDAOImpl;
+import com.cda.model.dao.sql.TypePieceDAOImpl;
 
 public class TypePieceAction extends Action {
 
@@ -63,7 +71,6 @@ public class TypePieceAction extends Action {
 				});
 			}
 			break;
-
 		case 3:
 			String nomSuppr = IHM_INS.lireDesignationPiece();
 			Optional<TypePiece> typePieceOptSuppr = this.typePieceDAO.findByName(nomSuppr);
