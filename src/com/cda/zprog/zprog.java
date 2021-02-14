@@ -19,6 +19,7 @@ public class zprog {
 		ajouterAction(actions, LesActions.VEHICULE_ACTION);
 		ajouterAction(actions, LesActions.EXPORT_EXCEL_ACTION);
 		ajouterAction(actions, LesActions.ACTION_RELATION);
+		ajouterAction(actions, LesActions.EXPORT_GSON_ACTION);
 
 		boolean vContinuer;
 		int vActionSaisie;

@@ -17,4 +17,5 @@ public interface LesActions {
 	public static final ActionRelation ACTION_RELATION = new ActionRelation();
 	public static final ActionIntrouvable ACTION_INTROUVABLE = new ActionIntrouvable();
 	public static final ExportExcelAction EXPORT_EXCEL_ACTION = new ExportExcelAction();
+	public static final ExportJsonAction EXPORT_GSON_ACTION = new ExportJsonAction();
 }
