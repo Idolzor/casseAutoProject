@@ -13,7 +13,7 @@ import com.cda.model.vehicule.Modele;
 import com.cda.model.vehicule.Vehicule;
 
 public class VehiculeAction extends Action {
-	private static final int ID = 6;
+	private static final int ID = 7;
 	private static final String DESC = "Actions sur les vehicules";
 	private VehiculeDAO vehiculeDAO;
 	private ModeleDAO modeleDAO;

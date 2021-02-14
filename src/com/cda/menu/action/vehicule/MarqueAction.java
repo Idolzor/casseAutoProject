@@ -11,7 +11,7 @@ import com.cda.model.vehicule.Marque;
 
 public class MarqueAction extends Action {
 
-	private static final int ID = 4;
+	private static final int ID = 5;
 	private static final String DESC = "Actions sur les marques";
 
 	private MarqueDAO marqueDAO;

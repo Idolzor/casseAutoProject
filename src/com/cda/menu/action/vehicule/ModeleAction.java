@@ -14,7 +14,7 @@ import com.cda.model.vehicule.Modele;
 
 public class ModeleAction extends Action {
 
-	private static final int ID = 5;
+	private static final int ID = 6;
 	private static final String DESC = "Actions sur les modeles";
 
 	private ModeleDAO modeleDAO;

@@ -1,5 +1,6 @@
 package com.cda.menu.action;
 
+import com.cda.menu.action.pieces.ActionPiece;
 import com.cda.menu.action.pieces.ActionRelation;
 import com.cda.menu.action.pieces.CategorieAction;
 import com.cda.menu.action.pieces.TypePieceAction;
@@ -16,6 +17,7 @@ public interface LesActions {
 	public static final CategorieAction CATEGORIE_ACTION = new CategorieAction();
 	public static final ActionRelation ACTION_RELATION = new ActionRelation();
 	public static final ActionIntrouvable ACTION_INTROUVABLE = new ActionIntrouvable();
+	public static final ActionPiece ACTION_PIECE = new ActionPiece();
 	public static final ExportExcelAction EXPORT_EXCEL_ACTION = new ExportExcelAction();
 	public static final ExportJsonAction EXPORT_GSON_ACTION = new ExportJsonAction();
 }

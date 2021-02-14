@@ -7,6 +7,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-8.0.22.jar"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="lib/curvesapi-1.03.jar"/>
 	<classpathentry kind="lib" path="lib/poi-excelant-3.14-20160307.jar"/>
 	<classpathentry kind="lib" path="lib/poi-ooxml-3.14-20160307.jar"/>
@@ -15,5 +16,9 @@
 	<classpathentry kind="lib" path="lib/xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="lib" path="lib/poi-3.14-20160307.jar"/>
 	<classpathentry kind="lib" path="lib/json-simple-1.1.jar"/>
+=======
+	<classpathentry kind="lib" path="lib/poi-5.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-5.0.0.jar"/>
+>>>>>>> 9806d83 (recuperation piece;)
 	<classpathentry kind="output" path="bin"/>
 </classpath>
