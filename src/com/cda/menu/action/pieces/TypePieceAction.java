@@ -12,13 +12,6 @@ import com.cda.menu.ihm.IHM_INS;
 
 import com.cda.model.pieces.Categorie;
 import com.cda.model.pieces.TypePiece;
-import com.cda.model.Categorie;
-import com.cda.model.TypePiece;
-
-import com.cda.model.dao.CategorieDAO;
-import com.cda.model.dao.TypePieceDAO;
-import com.cda.model.dao.sql.CategorieDAOImpl;
-import com.cda.model.dao.sql.TypePieceDAOImpl;
 
 public class TypePieceAction extends Action {
 
