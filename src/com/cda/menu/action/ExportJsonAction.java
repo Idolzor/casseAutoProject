@@ -26,7 +26,7 @@ public class ExportJsonAction extends Action {
 		Connection c = MyConnection.getConnection();
 		try {
 			PreparedStatement statement = c.prepareStatement(
-					"select count(piece.dateVente) as piece, modele.nomModele as Nom, modele.annneeModele as annee\r\n"
+					"select count(piece.dateVente) as piece, modele.nomModele as Nom, modele.anneeModele as annee\r\n"
 							+ "from vehicule\r\n" + "inner join piece on\r\n"
 							+ "vehicule.immatriculation = piece.immatriculation\r\n" + "inner join modele on\r\n"
 							+ "vehicule.idModele = modele.idModele\r\n" + "group by nomModele\r\n"
@@ -35,8 +35,8 @@ public class ExportJsonAction extends Action {
 			JSONObject jo = new JSONObject();
 			while (r.next()) {			
 				jo.put("Piece", r.getString("piece") + "");
-				jo.put("Annee", r.getString("Nom") + "");
-				jo.put("Nom", r.getString("annee"));
+				jo.put("Nom", r.getString("Nom") + "");
+				jo.put("Annee", r.getInt("annee"));
 			}
 
 			JSONArray tab = new JSONArray();

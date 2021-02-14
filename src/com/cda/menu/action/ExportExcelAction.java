@@ -40,7 +40,7 @@ public class ExportExcelAction extends Action {
 		Connection c = MyConnection.getConnection();
 		try {
 			PreparedStatement statement = c.prepareStatement(
-					"select count(piece.dateVente) as piece, modele.nomModele as Nom, modele.annneeModele as annee\r\n"
+					"select count(piece.dateVente) as piece, modele.nomModele as Nom, modele.anneeModele as annee\r\n"
 							+ "from vehicule\r\n" + "inner join piece on\r\n"
 							+ "vehicule.immatriculation = piece.immatriculation\r\n" + "inner join modele on\r\n"
 							+ "vehicule.idModele = modele.idModele\r\n" + "group by nomModele\r\n"
@@ -48,7 +48,7 @@ public class ExportExcelAction extends Action {
 			ResultSet r = statement.executeQuery();
 			int i = 0;
 			while (r.next()) {
-				list.add(new Book(r.getString("piece"), r.getString("Nom"), r.getString("annee")));
+				list.add(new Book(r.getString("piece"), r.getString("Nom"), r.getInt("annee")));
 			}
 			HSSFWorkbook workbook = new HSSFWorkbook();
 			HSSFSheet sheet = workbook.createSheet("Tableau ");

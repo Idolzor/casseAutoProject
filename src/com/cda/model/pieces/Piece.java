@@ -6,7 +6,7 @@ public class Piece {
 
 	private int idPiece;
 	private String dateRecup;
-	private Date dateVente;
+	private String dateVente;
 	private float prixVente;
 	private String immatriculation;
 	private String idTypePiece;
@@ -29,7 +29,7 @@ public class Piece {
 		return dateRecup;
 	}
 
-	public Date getDateVente() {
+	public String getDateVente() {
 		return dateVente;
 	}
 
@@ -55,8 +55,8 @@ public class Piece {
 		return this;
 	}
 
-	public Piece setDateVente(Date dateVente) {
-		this.dateVente = dateVente;
+	public Piece setDateVente(String dateVente2) {
+		this.dateVente = dateVente2;
 		return this;
 	}
 

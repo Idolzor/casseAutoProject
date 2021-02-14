@@ -4,9 +4,9 @@ public class Book {
 	
 	private String piece;
 	private String nom;
-	private String annee;
+	private int annee;
 	
-	public Book(String pPiece, String pNom, String pAnnee) {
+	public Book(String pPiece, String pNom, int pAnnee) {
 		this.piece = pPiece;
 		this.nom = pNom;
 		this.annee = pAnnee;
@@ -28,11 +28,11 @@ public class Book {
 		this.nom = nom;
 	}
 
-	public String getAnnee() {
+	public int getAnnee() {
 		return annee;
 	}
 
-	public void setAnnee(String annee) {
+	public void setAnnee(int annee) {
 		this.annee = annee;
 	}
 

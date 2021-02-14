@@ -14,7 +14,7 @@ import com.cda.dao1.sqlvehicule.ModeleDAOImpl;
 import com.cda.menu.action.Action;
 import com.cda.menu.ihm.IHM_INS;
 import com.cda.model.pieces.Categorie;
-import com.cda.model.pieces.Relation;
+import com.cda.model.pieces.Relation; 
 import com.cda.model.pieces.TypePiece;
 import com.cda.model.vehicule.Modele;
 
