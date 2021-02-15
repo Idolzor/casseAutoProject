@@ -11,8 +11,11 @@ import java.util.Optional;
 import com.cda.dao.pieces.TypePieceDAO;
 import com.cda.model.pieces.TypePiece;
 import com.cda.tools.MyConnection;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class TypePieceDAOImpl implements TypePieceDAO {
+	Logger log = LoggerFactory.getLogger(TypePieceDAOImpl.class);
 
 	@Override
 	public TypePiece save(TypePiece typepiece) {
@@ -31,7 +34,8 @@ public class TypePieceDAOImpl implements TypePieceDAO {
 					return typepiece;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return null;
@@ -55,7 +59,8 @@ public class TypePieceDAOImpl implements TypePieceDAO {
 
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return typepiece;
@@ -75,7 +80,8 @@ public class TypePieceDAOImpl implements TypePieceDAO {
 					res = new TypePiece().setDesignation(r.getString("designation"));
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return Optional.ofNullable(res);
@@ -91,7 +97,8 @@ public class TypePieceDAOImpl implements TypePieceDAO {
 				int nbDeleted = ps.executeUpdate();
 				return nbDeleted == 1;
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return false;

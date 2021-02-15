@@ -11,8 +11,11 @@ import java.util.Optional;
 import com.cda.dao.vehicule.ModeleDAO;
 import com.cda.model.vehicule.Modele;
 import com.cda.tools.MyConnection;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class ModeleDAOImpl implements ModeleDAO {
+	Logger logger = LoggerFactory.getLogger(ModeleDAOImpl.class);
 
 	@Override
 	public Modele save(Modele modele) {
@@ -33,7 +36,8 @@ public class ModeleDAOImpl implements ModeleDAO {
 					return modele;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return null;
@@ -49,7 +53,8 @@ public class ModeleDAOImpl implements ModeleDAO {
 				int nbDeleted = ps.executeUpdate();
 				return nbDeleted == 1;
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return false;
@@ -73,7 +78,8 @@ public class ModeleDAOImpl implements ModeleDAO {
 
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return modele;
@@ -92,7 +98,8 @@ public class ModeleDAOImpl implements ModeleDAO {
 					res = new Modele().setNom(r.getString("nomModele"));
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return Optional.ofNullable(res);
@@ -115,7 +122,8 @@ public class ModeleDAOImpl implements ModeleDAO {
 					return modele;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return null;
@@ -134,19 +142,21 @@ public class ModeleDAOImpl implements ModeleDAO {
 					res = new Modele().setAnnee(r.getInt("anneeModele"));
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return Optional.ofNullable(res);
 	}
 
-@Override
+	@Override
 	public Modele modifyAnnee(Modele modele, int ancienneAnnee) {
-	
+
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
-				PreparedStatement ps = c.prepareStatement("update modele set anneeModele = (?) where anneeModele = (?); ",
+				PreparedStatement ps = c.prepareStatement(
+						"update modele set anneeModele = (?) where anneeModele = (?); ",
 						PreparedStatement.RETURN_GENERATED_KEYS);
 
 				ps.setInt(1, modele.getAnnee());
@@ -158,7 +168,8 @@ public class ModeleDAOImpl implements ModeleDAO {
 					return modele;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return null;

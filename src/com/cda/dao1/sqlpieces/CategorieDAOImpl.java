@@ -10,10 +10,13 @@ import java.util.Optional;
 
 import com.cda.dao.pieces.CategorieDAO;
 import com.cda.model.pieces.Categorie;
-import com.cda.model.vehicule.Marque;
 import com.cda.tools.MyConnection;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class CategorieDAOImpl implements CategorieDAO {
+
+	Logger logger = LoggerFactory.getLogger(CategorieDAOImpl.class);
 
 	@Override
 	public Categorie save(Categorie categorie) {
@@ -31,7 +34,8 @@ public class CategorieDAOImpl implements CategorieDAO {
 					return categorie;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return null;
@@ -50,7 +54,8 @@ public class CategorieDAOImpl implements CategorieDAO {
 					personne = new Categorie(r.getInt("id_categorie"), r.getString("libelle"));
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return personne;
@@ -66,7 +71,8 @@ public class CategorieDAOImpl implements CategorieDAO {
 				int nbDeleted = ps.executeUpdate();
 				return nbDeleted == 1;
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return false;
@@ -85,7 +91,8 @@ public class CategorieDAOImpl implements CategorieDAO {
 				int nbrUpdated = statement.executeUpdate();
 				return nbrUpdated == 1;
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return false;
@@ -102,7 +109,8 @@ public class CategorieDAOImpl implements CategorieDAO {
 					categorie.add(new Categorie(r.getInt("idCategorie"), r.getString("libelle")));
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return categorie;
@@ -121,7 +129,8 @@ public class CategorieDAOImpl implements CategorieDAO {
 					res = new Categorie().setLibelle(r.getString("libelle"));
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return Optional.ofNullable(res);
@@ -137,7 +146,8 @@ public class CategorieDAOImpl implements CategorieDAO {
 				int nbDeleted = ps.executeUpdate();
 				return nbDeleted == 1;
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return false;
@@ -160,7 +170,8 @@ public class CategorieDAOImpl implements CategorieDAO {
 					return categorie;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return null;

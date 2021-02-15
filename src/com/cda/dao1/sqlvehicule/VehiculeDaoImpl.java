@@ -9,10 +9,14 @@ import java.util.List;
 import java.util.Optional;
 
 import com.cda.dao.vehicule.VehiculeDAO;
+import com.cda.dao1.sqlpieces.CategorieDAOImpl;
 import com.cda.model.vehicule.Vehicule;
 import com.cda.tools.MyConnection;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class VehiculeDaoImpl implements VehiculeDAO {
+	Logger logger = LoggerFactory.getLogger(CategorieDAOImpl.class);
 
 	@Override
 	public Vehicule save(Vehicule vehicule) {
@@ -33,7 +37,8 @@ public class VehiculeDaoImpl implements VehiculeDAO {
 					return vehicule;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return null;
@@ -49,7 +54,8 @@ public class VehiculeDaoImpl implements VehiculeDAO {
 				int nbDeleted = ps.executeUpdate();
 				return nbDeleted == 1;
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return false;
@@ -73,7 +79,8 @@ public class VehiculeDaoImpl implements VehiculeDAO {
 
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return vehicule;
@@ -93,7 +100,8 @@ public class VehiculeDaoImpl implements VehiculeDAO {
 					res = new Vehicule().setImmatriculation(r.getString("immatriculation"));
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return Optional.ofNullable(res);
@@ -117,7 +125,8 @@ public class VehiculeDaoImpl implements VehiculeDAO {
 					return vehicule;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				logger.error("erreur", e);
 			}
 		}
 		return null;
