@@ -12,8 +12,11 @@ import com.cda.dao.pieces.RelationDAO;
 import com.cda.model.pieces.Relation;
 import com.cda.model.pieces.TypePiece;
 import com.cda.tools.MyConnection;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class RelationDAOImpl implements RelationDAO {
+	Logger log = LoggerFactory.getLogger(RelationDAOImpl.class);
 
 	@Override
 	public Relation save(Relation relation) {
@@ -37,7 +40,8 @@ public class RelationDAOImpl implements RelationDAO {
 					return relation;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return null;
@@ -69,7 +73,8 @@ public class RelationDAOImpl implements RelationDAO {
 
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return relation;
@@ -88,7 +93,8 @@ public class RelationDAOImpl implements RelationDAO {
 				int nbDeleted = ps.executeUpdate();
 				return nbDeleted == 1;
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return false;

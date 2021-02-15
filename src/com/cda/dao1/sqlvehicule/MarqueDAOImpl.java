@@ -9,10 +9,15 @@ import java.util.List;
 import java.util.Optional;
 
 import com.cda.dao.vehicule.MarqueDAO;
+import com.cda.dao1.sqlpieces.PieceDaoImpl;
 import com.cda.model.vehicule.Marque;
 import com.cda.tools.MyConnection;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class MarqueDAOImpl implements MarqueDAO {
+
+	Logger log = LoggerFactory.getLogger(MarqueDAOImpl.class);
 
 	@Override
 	public Marque save(Marque marque) {
@@ -30,7 +35,8 @@ public class MarqueDAOImpl implements MarqueDAO {
 					return marque;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return null;
@@ -53,8 +59,8 @@ public class MarqueDAOImpl implements MarqueDAO {
 					return marque;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);			}
 		}
 		return null;
 	}
@@ -69,8 +75,8 @@ public class MarqueDAOImpl implements MarqueDAO {
 				int nbDeleted = ps.executeUpdate();
 				return nbDeleted == 1;
 			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);			}
 		}
 		return false;
 	}
@@ -87,8 +93,8 @@ public class MarqueDAOImpl implements MarqueDAO {
 					marque.add(new Marque().setId(r.getInt("idMarque")).setNom(r.getString("nomMarque")));
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);			}
 		}
 		return marque;
 	}
@@ -107,7 +113,8 @@ public class MarqueDAOImpl implements MarqueDAO {
 					res = new Marque().setNom(r.getString("nomMarque"));
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return Optional.ofNullable(res);

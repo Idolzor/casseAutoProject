@@ -1,27 +1,33 @@
 package com.cda.menu.ihm;
 
 import java.util.Scanner;
+import org.slf4j.LoggerFactory;
+
+import org.slf4j.Logger;
 
 public class IHM_INS {
+	static Logger logger = LoggerFactory.getLogger(IHM_INS.class);
 
 	static Scanner scanner = new Scanner(System.in);
 
 	public static int lireChoix() {
 
-		boolean nbTrouve = false;
+		boolean isNumber = true;
+		int y;
+		while (isNumber) {
+			System.out.println("Choix : ");
 
-		while (nbTrouve == false) {
-			System.out.println("Saississez une action");
-			System.out.print("Choix : ");
-			int saisie = scanner.nextInt();
-
-			if (saisie >= 0 && saisie <= 99) {
-				nbTrouve = true;
-				return saisie;
-			} else {
-				System.out.println("Saisie erronée");
+			try {
+				y = (int) Integer.valueOf(scanner.next());
+				isNumber = false;
+				return y;
+			} catch (Exception e) {
+				System.out.println("veuillez entrer un nombre");
+				logger.error("erreur", e);
 			}
+
 		}
+
 		return 0;
 	}
 

@@ -1,0 +1,99 @@
+2021-02-15 07:39:10,297 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.util.InputMismatchException: null
+	at java.base/java.util.Scanner.throwFor(Scanner.java:939)
+	at java.base/java.util.Scanner.next(Scanner.java:1594)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2258)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2212)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:22)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:25,617 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:26,790 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:27,156 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:27,496 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:27,813 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:28,146 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:28,440 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:28,748 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:29,030 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:29,341 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:29,702 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:44:30,687 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)
+2021-02-15 07:45:14,279 ERROR com.cda.menu.ihm.IHM_INS [main] erreur
+java.lang.NumberFormatException: For input string: "s"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.valueOf(Integer.java:983)
+	at com.cda.menu.ihm.IHM_INS.lireChoix(IHM_INS.java:21)
+	at com.cda.zprog.zprog.main(zprog.java:31)

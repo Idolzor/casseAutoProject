@@ -1,6 +1,7 @@
 package com.cda.dao1.sqlpieces;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,8 +12,11 @@ import java.util.Optional;
 import com.cda.dao.pieces.PieceDAO;
 import com.cda.model.pieces.Piece;
 import com.cda.tools.MyConnection;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class PieceDaoImpl implements PieceDAO {
+	Logger log = LoggerFactory.getLogger(PieceDaoImpl.class);
 
 	@Override
 	public Piece save(Piece piece) {
@@ -37,7 +41,8 @@ public class PieceDaoImpl implements PieceDAO {
 					return piece;
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return null;
@@ -59,7 +64,8 @@ public class PieceDaoImpl implements PieceDAO {
 				int nbrUpdated = statement.executeUpdate();
 				return nbrUpdated == 1;
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return false;
@@ -77,7 +83,8 @@ public class PieceDaoImpl implements PieceDAO {
 					piece.add(new Piece());
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				System.out.println("oops, contacter le dev");
+				log.error("erreur", e);
 			}
 		}
 		return piece;

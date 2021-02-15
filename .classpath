@@ -17,5 +17,8 @@
 	<classpathentry kind="lib" path="lib/poi-ooxml-schemas-3.14-20160307.jar"/>
 	<classpathentry kind="lib" path="lib/poi-scratchpad-3.14-20160307.jar"/>
 	<classpathentry kind="lib" path="lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/logback-classic-1.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/logback-core-1.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
